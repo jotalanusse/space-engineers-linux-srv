@@ -2,14 +2,23 @@ version: "3.7"
 services:
   ######## Space Engineers Server########
   se-dedicated-srv:
-    restart: always
+    restart: "no"
     image: se-dedicated-srv:latest
-    # env_file: .env
-    # environment:
     volumes:
       - ./se-server:/se-server
     ports:
      - "27016:27016/udp"
+    # networks:
+    #   server-network:
+    #       ipv4_address: 172.24.2.1
+
+# networks:
+#     server-network:
+#         driver: bridge
+#         ipam:
+#             driver: default
+#             config:
+#                 - subnet: "172.24.2.0/16"
 
 volumes:
   se-server:

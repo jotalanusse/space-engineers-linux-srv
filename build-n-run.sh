@@ -1,0 +1,1 @@
+docker build --no-cache ./wine -t debian-wine:latest && docker build --no-cache ./server -t se-dedicated-srv:latest && docker-compose -f docker-compose.yml up
