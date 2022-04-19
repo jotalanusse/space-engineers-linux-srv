@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  ######## Space Engineers Server########
+  se-dedicated-srv:
+    restart: always
+    image: se-dedicated-srv:latest
+    # env_file: .env
+    # environment:
+    volumes:
+      - ./se-server:/se-server
+    ports:
+     - "27016:27016/udp"
+
+volumes:
+  se-server:
