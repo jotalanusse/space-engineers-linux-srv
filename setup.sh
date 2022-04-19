@@ -24,6 +24,6 @@ docker run -it -v "steamcmd_volume:/home/steam/steamcmd" --name=steamcmd cm2netw
 docker cp steamcmd:home/steam/steamcmd/bins/ ./se-server/
 
 cp ./source/SpaceEngineers-Dedicated.cfg ./se-server/config/SpaceEngineers-Dedicated.cfg
-cp -R ./source/World/ ./se-server/config/World
+cp -R ./source/World/ ./se-server/config/
 
 docker rm steamcmd
