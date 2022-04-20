@@ -12,13 +12,5 @@ services:
     #   server-network:
     #       ipv4_address: 172.24.2.1
 
-# networks:
-#     server-network:
-#         driver: bridge
-#         ipam:
-#             driver: default
-#             config:
-#                 - subnet: "172.24.2.0/16"
-
 volumes:
   se-server:

@@ -1,5 +1,5 @@
 # Use Debian to run wine
-FROM debian:buster as enviorment
+FROM debian:buster
 
 # Set root as workdir
 WORKDIR /root
@@ -11,7 +11,7 @@ RUN dpkg --add-architecture i386
 RUN apt update && apt upgrade -y
 
 # Install general packages
-RUN apt install curl gnupg2 xvfb software-properties-common apt-transport-https -y
+RUN apt install curl gnupg2 software-properties-common apt-transport-https -y
 
 # Add wine
 RUN curl 'https://dl.winehq.org/wine-builds/winehq.key' | apt-key add -
@@ -19,7 +19,7 @@ RUN apt-add-repository 'https://dl.winehq.org/wine-builds/debian/'
 RUN apt-add-repository non-free
 
 # Update again
-RUN apt update -y
+RUN apt update # TODO: No -y
 
 # Download libfaudio
 RUN curl -L 'https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/i386/libfaudio0_20.01-0~buster_i386.deb' > libfaudio0_20.01-0~buster_i386.deb
@@ -37,6 +37,8 @@ RUN apt install --install-recommends winehq-stable -y
 
 # Delete downloads
 RUN rm *.deb
+
+RUN apt install xvfb cabextract unzip -y # TODO: Dont know if last two necessary
 
 # Clean a little bit
 RUN apt purge software-properties-common gnupg2 python* -y
