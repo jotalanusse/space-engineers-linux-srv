@@ -13,7 +13,7 @@ rm -rf ./se-server
 echo ">> Creating configuration folders"
 mkdir -p ./se-server/bins
 mkdir -p ./se-server/config
-mkdir -p ./se-server/config/World
+mkdir -p ./se-server/config/Saves
 mkdir -p ./se-server/config/Plugins
 
 # Run SteamCMD and install the server
@@ -31,7 +31,7 @@ cp ./source/SpaceEngineers-Dedicated.cfg ./se-server/config/SpaceEngineers-Dedic
 
 # Copy our world save to the server
 echo ">> Transfering world save"
-cp -R ./source/World/ ./se-server/config/
+cp -R ./source/World/ ./se-server/config/Saves
 
 # Delete the container
 echo ">> Deleting SteamCMD image"

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Hours wasted on this script: 19
 # As docker can only run one process we have to use this script to get Xvfb running while calling winetricks stuff
 Xvfb :5 -screen 0 1024x768x16 &
 env WINEARCH=win64 WINEDEBUG=-all WINEPREFIX=/root/server WINEDLLOVERRIDES="mscoree=d" wineboot --init /nogui 
