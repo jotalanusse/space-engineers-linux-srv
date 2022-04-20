@@ -2,13 +2,10 @@ version: '3.8'
 
 services:
   se-server:
-    build: .
-    image: devidian/spaceengineers:latest
-    container_name: se-ds-docker
+    image: devidian/spaceengineers
+    container_name: se-ds-docker-quickstart
     restart: unless-stopped
     volumes:
-      # left side: your docker-host machine
-      # right side: the paths in the image (!!do not change!!)
       - /appdata/space-engineers/instances:/appdata/space-engineers/instances
       - /appdata/space-engineers/SpaceEngineersDedicated:/appdata/space-engineers/SpaceEngineersDedicated
       - /appdata/space-engineers/steamcmd:/root/.steam
@@ -22,5 +19,5 @@ services:
         protocol: udp
         mode: host
     environment: 
-      - WINEDEBUG=-all
+      - WINEDEBUG=-all 
       - INSTANCE_NAME=DockerQuickStart

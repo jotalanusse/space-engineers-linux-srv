@@ -1,12 +1,3 @@
-echo "The setup will delete any existing servers and saves, continue?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) break;;
-        No ) exit;;
-    esac
-done
-
-
 docker volume create steamcmd_volume
 
 docker stop steamcmd
