@@ -1,1 +1,1 @@
-docker build ./wine -t debian-wine:latest && docker build ./server -t se-dedicated-srv:latest && docker-compose -f docker-compose.yml up
+docker build . -t se-dedicated-srv:latest && docker-compose -f docker-compose.yml up
